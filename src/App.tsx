@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Toggle from './components/Toggle'
 import Timer from './components/Timer'
+import Counter from './components/Counter'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -47,6 +48,18 @@ function App() {
             </>
           )}
         </Timer>
+      </div>
+      <div>
+        <h1>Function As a Child Counter</h1>
+        <Counter>
+          {(count,  incrementCount)=>{
+            return (
+              <>
+              <button onClick={incrementCount}>Clicked {count} times!</button>
+              </>
+            )
+          }}
+        </Counter>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
