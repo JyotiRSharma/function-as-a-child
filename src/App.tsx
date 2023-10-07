@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Toggle from './components/Toggle'
+import Timer from './components/Timer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +36,17 @@ function App() {
           </div>
         )}
       </Toggle>
+      </div>
+      <div>
+        <Timer>
+          {(time, startTimer, stopTimer)=>(
+            <>
+            <p>Time elapsed: {time}</p>
+            <button onClick={startTimer}>Start</button>
+            <button onClick={stopTimer}>Stop</button>
+            </>
+          )}
+        </Timer>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
